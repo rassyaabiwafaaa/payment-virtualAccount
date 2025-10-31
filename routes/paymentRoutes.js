@@ -1,11 +1,11 @@
 import express from 'express';
 
 import{
-    createVa,
-    inquiryVa,
-    payVa,
+    createVirtualAccountController as createVa,
+    inquiryVirtualAccountController as inquiryVa,
+    paymentVirtualAccountController as payVa,
     webHookHandler
-} from 'controllers/paymentController.js';
+} from "../controller/paymentController.js";
 
 
 const router = express.Router();

@@ -2,11 +2,11 @@ import{
     createVirtualAccount,
     inquiryVirtualAccount,
     paymentVirtualAccount
-} from '../services/paymentService.js';
+} from "../services/va-service.js";
 
 
 // Controller for creating a virtual account
-const createVirtualAccount = async (req, res) => {
+const createVirtualAccountController = async (req, res) => {
     try{
         const {corp_code, cust_code, amount} = req.body;
         if(!corp_code || !cust_code || !amount){
@@ -27,7 +27,7 @@ const createVirtualAccount = async (req, res) => {
 
 // Controller for inquiring a virtual account
 
-const inquiryVirtualAccount = async (req, res) => {
+const inquiryVirtualAccountController = async (req, res) => {
 try{
     const{vaNumber} = req.body;
     if(!vaNumber){
@@ -46,7 +46,7 @@ catch (error){
 }
 
 // Controller for processing payment to a virtual account
-const paymentVirtualAccount = async (req, res) => {
+const paymentVirtualAccountController = async (req, res) => {
     try{
         const{vaNumber, amount} = req.body;
         if(!vaNumber || !amount){
@@ -77,3 +77,10 @@ const webHookHandler = async (req, res) => {
     }
 }
 
+// export semua controller
+export {
+  createVirtualAccountController,
+  inquiryVirtualAccountController,
+  paymentVirtualAccountController,
+  webHookHandler
+};
