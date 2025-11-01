@@ -4,6 +4,8 @@ import{
     paymentVirtualAccount
 } from "../services/va-service.js";
 
+import { logInfo } from "../services/logger.js";
+
 
 // Controller for creating a virtual account
 const createVirtualAccountController = async (req, res) => {

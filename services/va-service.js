@@ -3,14 +3,12 @@ import { generateCorpCode, generateCustcode } from "../utils/generateVa.js";
 let vaStore = []; // In-memory store for virtual accounts
 
 export const createVirtualAccount = (corp_code, cust_code, amount) => {
-    const corpCode = generateCorpCode();
-    const custCode = generateCustcode();
     const vaNumber = `${corp_code}${cust_code}`;
 
     const newVa = {
         vaNumber,
-        corpCode,
-        custCode,
+        corp_code,
+        cust_code,
         amount,
         status: 'active',
         createdAt: new Date()
